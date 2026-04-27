@@ -1,0 +1,311 @@
+信号処理 実習レポート
+作成日：2026-04-27
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+0. 概要
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+本実習では，libpcm.so を利用して以下の3つのプログラムを作成した．
+
+  1. synth.c  ── 加算合成 + ADSR 包絡線による楽器音生成
+  2. seq.c    ── WAV ファイルの連結（シーケンサー）
+  3. mix.c    ── WAV ファイルの混合（ミキサー）
+
+コンパイルは Makefile で管理する．
+
+    $ make synth seq mix
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. synth.c ── 加算合成 + ADSR 包絡線
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+【概要】
+基本周波数 f0 の整数倍（高調波）の正弦波を重ね合わせて任意の波形を生成し，
+さらに ADSR 包絡線で振幅を時間変化させて楽器音らしい音色を作る．
+
+【加算合成の式】
+  x(t) = Σ_{k=1}^{N} a_k * sin(2π k f0 t)
+
+  実装では矩形波のスペクトル分布を採用（奇数次高調波のみ）：
+    a_k = 4 / (π k)    (k = 1, 3, 5, ..., N=50)
+    a_k = 0            (k = 偶数)
+
+  振幅スペクトルの正規化：音割れ防止のため a_k を Σa_k で割る．
+
+【ADSR 包絡線の式】
+  e(t) =
+    1 - exp(-5t/A)                    t ∈ [0, A)   アタック
+    S + (1-S) * exp(-5(t-A)/D)        t ∈ [A, G)   ディケイ
+    S * exp(-5(t-G)/R)                t ∈ [G, L)   リリース
+  ただし G = L - R（ゲートタイム）
+
+  採用パラメータ：
+    A = 0.01 s  （アタックタイム）
+    D = 0.15 s  （ディケイタイム）
+    S = 0.5     （サステインレベル）
+    R = 0.3 s   （リリースタイム）
+    L = 1.0 s   （デュレーション）
+
+【振幅変調の適用】
+  x0[i] = v * e(t)
+
+【コンパイル・実行】
+    $ cc synth.c -std=c99 -I. -L. -lpcm -lm -o synth
+    $ ./synth C     > C.wav     # ド
+    $ ./synth D     > D.wav     # レ
+    $ ./synth A4    | paplay    # ラ（440 Hz）
+    $ ./synth 523.3 | paplay    # C5（523.3 Hz 直接指定）
+
+【工夫・考察】
+  ・A > 0 の条件分岐で，A=0 指定時のゼロ除算を防いだ．
+  ・矩形波以外にも，ループ条件を変えるだけで鋸歯状波・三角波に変更可能
+    （コメントに記載済み）．
+  ・ADSR の指数関数的な変化は，実際のアナログシンセの RC 回路の
+    過渡現象をシミュレートしたものである．
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. seq.c ── WAV ファイルの連結（シーケンサー）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+【概要】
+複数の WAV ファイルを入力し，音を順番につなぎ合わせて1つの WAV ファイルとして
+出力する．テキストファイルに対する cat コマンドの WAV 版に相当する．
+
+【処理手順】
+  1. コマンドライン引数のファイルをすべて pcmLoad() で読み込む
+  2. 総標本数 = Σ (各ファイルの len) を計算
+  3. pcmInit(bit, ch, fs, total_len) で出力用 Wav を確保
+  4. 各入力の val[] を memcpy() で出力配列に順次コピー
+  5. pcmWrite(stdout, out) でファイル出力
+  6. pcmFin() でメモリ解放
+
+【制約条件】
+  ・すべての入力ファイルの PCM 属性（bit, ch, fs）は等しいとする
+    （最初のファイルの属性を出力に使用）
+  ・出力の収録時間 = 全入力の収録時間の合計
+
+【コンパイル・実行】
+    $ cc seq.c -std=c99 -I. -L. -lpcm -o seq
+    $ ./seq C.wav D.wav E.wav > C-D-E.wav
+    $ paplay C-D-E.wav            # ドレミ♫
+
+【工夫・考察】
+  ・バイナリデータ（dat）ではなく実数値（val）を memcpy するため，
+    出力時に val→dat の自動変換が正しく行われる．
+  ・memcpy のコピー量は in[i]->len * sizeof(double) [B]．
+    チャネルが 2（ステレオ）の場合は val[0], val[1] それぞれをコピーする．
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. mix.c ── WAV ファイルの混合（ミキサー）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+【概要】
+複数の WAV ファイルを入力し，各時刻の瞬時値を重ね合わせて和音・合奏を実現する．
+
+【処理手順】
+  1. コマンドライン引数のファイルをすべて pcmLoad() で読み込む
+  2. 最大標本数 max_len = max(各ファイルの len) を取得
+  3. pcmInit(bit, ch, fs, max_len) で出力用 Wav を確保
+  4. 全入力の瞬時値を加算し，入力数 n で割って正規化
+       out->val[c][j] = Σ in[i]->val[c][j] / n
+  5. pcmWrite(stdout, out) でファイル出力
+  6. pcmFin() でメモリ解放
+
+【制約条件】
+  ・PCM 属性は等しいとする（最初のファイルの属性を使用）
+  ・出力の収録時間 = 全入力の収録時間の最大値
+    （短いファイルの範囲外サンプルは 0.0 として扱う）
+
+【音割れ対策】
+  入力数 n で除算することで瞬時値の絶対値が確実に 1.0 以下になる．
+  ただし n が大きいほど音量が下がる点はトレードオフである．
+
+【コンパイル・実行】
+    $ cc mix.c -std=c99 -I. -L. -lpcm -o mix
+    $ ./mix C.wav E.wav G.wav > CEG.wav
+    $ paplay CEG.wav           # 和音ドミソ♪
+
+【工夫・考察】
+  ・異なる収録時間の WAV を混合できる（j < in[i]->len の条件分岐）．
+  ・入力数 n で割ることで -1.0〜+1.0 の値域を保証しているが，
+    実際には瞬時値の合計が最大化しない限りクリッピングは起きないため，
+    √n で割るパワー正規化にすればより大きな音量を得られる（今後の改善余地）．
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. 実行例（カデンツ：ドミソ → シファソ → ドミソ）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+単音の WAV ファイルを生成：
+
+    $ for note in C D E F G A B C5; do ./synth $note > $note.wav; done
+
+カデンツの生成・再生：
+
+    $ ./mix C5.wav E.wav G.wav > CEG.wav    # ドミソ
+    $ ./mix B.wav  F.wav G.wav > BFG.wav    # シファソ
+    $ ./seq CEG.wav BFG.wav CEG.wav | paplay   # ジャーン↑ジャーン↓ジャーン↑
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. ソースコード一覧
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+────────────────── synth.c ──────────────────
+// WAVファイル生成アプリ（加算合成 + ADSR包絡線）
+// 改造元ソース：sin.c
+// コンパイル：$ cc synth.c -std=c99 -I. -L. -lpcm -lm -o synth
+
+#include <stdio.h>
+#include <stdlib.h>
+#define _USE_MATH_DEFINES
+#define __USE_XOPEN
+#include <math.h>
+#include <string.h>
+#include "pcm.h"
+
+#define debug(...) fprintf(stderr, __VA_ARGS__)
+#define fatal(s, ...) { debug(__VA_ARGS__); exit(s); }
+
+static double envelope(double t, double A, double D, double S, double R, double L)
+{
+    double G = L - R;
+    if (t < A) return (A > 0) ? (1.0 - exp(-5.0 * t / A)) : 1.0;
+    if (t < G) return (D > 0) ? (S + (1.0 - S) * exp(-5.0 * (t - A) / D)) : S;
+    return (R > 0) ? (S * exp(-5.0 * (t - G) / R)) : 0.0;
+}
+
+int main(int argc, char *argv[])
+{
+    double f = pcmMusicFreq("A4");
+    if (argc > 1) f = pcmMusicFreq(argv[1]);
+
+    int bit = 16, ch = 1, fs = 48000;
+    double L = 1.0;
+    int len = (int)(L * fs);
+
+    double A = 0.01, D = 0.15, S = 0.5, R = 0.3;
+
+#define N 50
+    double a[N+1];
+    for (int k = 0; k <= N; k++) a[k] = 0.0;
+    for (int k = 1; k <= N; k += 2) a[k] = 4.0 / (M_PI * k);
+
+    double a0 = 0.0;
+    for (int k = 1; k <= N; k++) a0 += a[k];
+    for (int k = 1; k <= N; k++) a[k] /= a0;
+
+    Wav *p = pcmInit(bit, ch, fs, len);
+    if (p == NULL) return (1);
+
+    double *x0 = p->val[0];
+    for (int i = 0; i < len; i++) {
+        double t  = (double)i / fs;
+        double wt = 2.0 * M_PI * f * t;
+        double v  = 0.0;
+        for (int k = 1; k <= N; k++) v += a[k] * sin(k * wt);
+        x0[i] = v * envelope(t, A, D, S, R, L);
+    }
+
+    pcmWrite(stdout, p);
+    pcmFin(p);
+    return (0);
+}
+
+────────────────── seq.c ──────────────────
+// WAVファイル連結アプリ（シーケンサー）
+// コンパイル：$ cc seq.c -std=c99 -I. -L. -lpcm -o seq
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "pcm.h"
+
+#define debug(...) fprintf(stderr, __VA_ARGS__)
+#define fatal(s, ...) { debug(__VA_ARGS__); exit(s); }
+
+int main(int argc, char *argv[])
+{
+    if (argc < 2) fatal(1, "使い方：%s file1.wav file2.wav ...\n", argv[0]);
+
+    int n = argc - 1;
+    Wav **in = malloc(n * sizeof(Wav *));
+    if (in == NULL) fatal(1, "メモリ確保失敗\n");
+
+    unsigned int total_len = 0;
+    unsigned int bit = 16, ch = 1, fs = 48000;
+
+    for (int i = 0; i < n; i++) {
+        in[i] = pcmLoad(argv[i + 1]);
+        if (in[i] == NULL) fatal(1, "読み込み失敗：%s\n", argv[i + 1]);
+        total_len += in[i]->len;
+        if (i == 0) { bit = in[i]->fmt.bit; ch = in[i]->fmt.ch; fs = in[i]->fmt.fs; }
+    }
+
+    Wav *out = pcmInit(bit, ch, fs, total_len);
+    if (out == NULL) fatal(1, "出力用WAV確保失敗\n");
+
+    unsigned int offset = 0;
+    for (int i = 0; i < n; i++) {
+        for (int c = 0; c < (int)ch; c++)
+            memcpy(out->val[c] + offset, in[i]->val[c], in[i]->len * sizeof(double));
+        offset += in[i]->len;
+    }
+
+    pcmWrite(stdout, out);
+    for (int i = 0; i < n; i++) pcmFin(in[i]);
+    pcmFin(out);
+    free(in);
+    return (0);
+}
+
+────────────────── mix.c ──────────────────
+// WAVファイル混合アプリ（ミキサー）
+// コンパイル：$ cc mix.c -std=c99 -I. -L. -lpcm -o mix
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "pcm.h"
+
+#define debug(...) fprintf(stderr, __VA_ARGS__)
+#define fatal(s, ...) { debug(__VA_ARGS__); exit(s); }
+
+int main(int argc, char *argv[])
+{
+    if (argc < 2) fatal(1, "使い方：%s file1.wav file2.wav ...\n", argv[0]);
+
+    int n = argc - 1;
+    Wav **in = malloc(n * sizeof(Wav *));
+    if (in == NULL) fatal(1, "メモリ確保失敗\n");
+
+    unsigned int max_len = 0;
+    unsigned int bit = 16, ch = 1, fs = 48000;
+
+    for (int i = 0; i < n; i++) {
+        in[i] = pcmLoad(argv[i + 1]);
+        if (in[i] == NULL) fatal(1, "読み込み失敗：%s\n", argv[i + 1]);
+        if (in[i]->len > max_len) max_len = in[i]->len;
+        if (i == 0) { bit = in[i]->fmt.bit; ch = in[i]->fmt.ch; fs = in[i]->fmt.fs; }
+    }
+
+    Wav *out = pcmInit(bit, ch, fs, max_len);
+    if (out == NULL) fatal(1, "出力用WAV確保失敗\n");
+
+    for (int c = 0; c < (int)ch; c++) {
+        for (unsigned int j = 0; j < max_len; j++) {
+            double v = 0.0;
+            for (int i = 0; i < n; i++)
+                if (j < in[i]->len) v += in[i]->val[c][j];
+            out->val[c][j] = v / n;
+        }
+    }
+
+    pcmWrite(stdout, out);
+    for (int i = 0; i < n; i++) pcmFin(in[i]);
+    pcmFin(out);
+    free(in);
+    return (0);
+}
