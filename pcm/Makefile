@@ -1,6 +1,6 @@
 DIR = pcm
 LIB = libpcm.so
-APP = thru rate sin wave synth seq mix ft
+APP = thru rate sin wave synth seq mix ft iir ip fft fir
 
 all:	$(LIB)	$(APP)
 
@@ -30,6 +30,18 @@ seq:	seq.c	$(LIB)
 
 mix:	mix.c	$(LIB)
 	cc $< -std=c99 -I. -L. -lpcm -o $@
+
+iir:	iir.c	$(LIB)
+	cc $< -std=c99 -I. -L. -lpcm -lm -o $@
+
+ip:	ip.c	$(LIB)
+	cc $< -std=c99 -I. -L. -lpcm -lm -o $@
+
+fft:	fft.c	$(LIB)
+	cc $< -std=c99 -I. -L. -lpcm -lm -o $@
+
+fir:	fir.c	$(LIB)
+	cc $< -std=c99 -I. -L. -lpcm -lm -o $@
 
 clean:
 	-rm $(LIB) $(APP)
