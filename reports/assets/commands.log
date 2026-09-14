@@ -1,0 +1,1507 @@
+$ make -B -C /home/kqnade/repos/github.com/kqnade/soundprogramming/reports/pcm
+
+$ $BIN/sin2 440 8 1 48000 > $ASSETS/pcm/sin_8_1_48000.wav
+bit=8  ch=1  fs=48000  len=48000  f=440.0 Hz
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	8 [bits]
+データサイズ：	48000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ hexdump -C -n 44 $ASSETS/pcm/sin_8_1_48000.wav
+
+$ $BIN/sin2 440 16 1 48000 > $ASSETS/pcm/sin_16_1_48000.wav
+bit=16  ch=1  fs=48000  len=48000  f=440.0 Hz
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ hexdump -C -n 44 $ASSETS/pcm/sin_16_1_48000.wav
+
+$ $BIN/sin2 440 24 1 48000 > $ASSETS/pcm/sin_24_1_48000.wav
+bit=24  ch=1  fs=48000  len=48000  f=440.0 Hz
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	24 [bits]
+データサイズ：	144000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ hexdump -C -n 44 $ASSETS/pcm/sin_24_1_48000.wav
+
+$ $BIN/sin2 440 32 1 48000 > $ASSETS/pcm/sin_32_1_48000.wav
+bit=32  ch=1  fs=48000  len=48000  f=440.0 Hz
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	32 [bits]
+データサイズ：	192000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ hexdump -C -n 44 $ASSETS/pcm/sin_32_1_48000.wav
+
+$ $BIN/sin2 440 16 2 48000 > $ASSETS/pcm/sin_16_2_48000.wav
+bit=16  ch=2  fs=48000  len=48000  f=440.0 Hz
+チャネル数：	2
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	192000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ hexdump -C -n 44 $ASSETS/pcm/sin_16_2_48000.wav
+
+$ $BIN/sin2 440 16 1 8000 > $ASSETS/pcm/sin_16_1_8000.wav
+bit=16  ch=1  fs=8000  len=8000  f=440.0 Hz
+チャネル数：	1
+標本化周波数：	8000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	16000 [bytes]
+標本数：	8000
+収録時間：	1.000000 [s]
+
+
+$ hexdump -C -n 44 $ASSETS/pcm/sin_16_1_8000.wav
+
+$ $BIN/sin2 440 16 1 44100 > $ASSETS/pcm/sin_16_1_44100.wav
+bit=16  ch=1  fs=44100  len=44100  f=440.0 Hz
+チャネル数：	1
+標本化周波数：	44100 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	88200 [bytes]
+標本数：	44100
+収録時間：	1.000000 [s]
+
+
+$ hexdump -C -n 44 $ASSETS/pcm/sin_16_1_44100.wav
+
+$ $BIN/rate 0.25 < $ASSETS/pcm/sin_16_1_48000.wav > $ASSETS/pcm/rate_0.25.wav
+倍率 = 0.250000
+■ 元のPCM属性：
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 変更後のPCM属性：
+チャネル数：	1
+標本化周波数：	12000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	4.000000 [s]
+
+
+$ $BIN/rate 0.5 < $ASSETS/pcm/sin_16_1_48000.wav > $ASSETS/pcm/rate_0.5.wav
+倍率 = 0.500000
+■ 元のPCM属性：
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 変更後のPCM属性：
+チャネル数：	1
+標本化周波数：	24000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	2.000000 [s]
+
+
+$ $BIN/rate 1 < $ASSETS/pcm/sin_16_1_48000.wav > $ASSETS/pcm/rate_1.wav
+倍率 = 1.000000
+■ 元のPCM属性：
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 変更後のPCM属性：
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ $BIN/rate 2 < $ASSETS/pcm/sin_16_1_48000.wav > $ASSETS/pcm/rate_2.wav
+倍率 = 2.000000
+■ 元のPCM属性：
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 変更後のPCM属性：
+チャネル数：	1
+標本化周波数：	96000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	0.500000 [s]
+
+
+$ $BIN/rate 4 < $ASSETS/pcm/sin_16_1_48000.wav > $ASSETS/pcm/rate_4.wav
+倍率 = 4.000000
+■ 元のPCM属性：
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 変更後のPCM属性：
+チャネル数：	1
+標本化周波数：	192000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	0.250000 [s]
+
+
+$ $BIN/synth C > $ASSETS/generation/C.wav
+synth: f = 261.625565 Hz
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ $BIN/synth D > $ASSETS/generation/D.wav
+synth: f = 293.664768 Hz
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ $BIN/synth E > $ASSETS/generation/E.wav
+synth: f = 329.627557 Hz
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ $BIN/synth F > $ASSETS/generation/F.wav
+synth: f = 349.228231 Hz
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ $BIN/synth G > $ASSETS/generation/G.wav
+synth: f = 391.995436 Hz
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ $BIN/synth A > $ASSETS/generation/A.wav
+synth: f = 440.000000 Hz
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ $BIN/synth B > $ASSETS/generation/B.wav
+synth: f = 493.883301 Hz
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ $BIN/synth C5 > $ASSETS/generation/C5.wav
+synth: f = 523.251131 Hz
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ $BIN/seq $ASSETS/generation/C.wav $ASSETS/generation/D.wav $ASSETS/generation/E.wav > $ASSETS/generation/C-D-E.wav
+
+$ $BIN/mix $ASSETS/generation/C.wav $ASSETS/generation/E.wav $ASSETS/generation/G.wav > $ASSETS/generation/CEG.wav
+
+$ $BIN/mix $ASSETS/generation/B.wav $ASSETS/generation/F.wav $ASSETS/generation/G.wav > $ASSETS/generation/BFG.wav
+
+$ $BIN/seq $ASSETS/generation/CEG.wav $ASSETS/generation/BFG.wav $ASSETS/generation/CEG.wav > $ASSETS/generation/cadence.wav
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 64 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 64（2^6），	窓幅 = 0.001333 [s]
+基本周波数 = 750.000000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 2.173160e-04 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 7.617700e-05 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 1.854001e-06 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 9.519990e-07 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 64）
+DFT  : 2.173160e-04 s
+IDFT : 7.617700e-05 s
+FFT  : 1.854001e-06 s
+IFFT : 9.519990e-07 s
+高速化比 DFT/FFT = 117.21 倍
+高速化比 IDFT/IFFT = 80.02 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 1.060717e-13（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 1.277602e-15
+max |IDFT(Xd) - x|    = 1.297148e-14
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 64 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 64（2^6），	窓幅 = 0.001333 [s]
+基本周波数 = 750.000000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 8.371200e-05 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 7.475500e-05 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 1.974000e-06 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 9.319992e-07 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 64）
+DFT  : 8.371200e-05 s
+IDFT : 7.475500e-05 s
+FFT  : 1.974000e-06 s
+IFFT : 9.319992e-07 s
+高速化比 DFT/FFT = 42.41 倍
+高速化比 IDFT/IFFT = 80.21 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 1.060717e-13（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 1.277602e-15
+max |IDFT(Xd) - x|    = 1.297148e-14
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 64 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 64（2^6），	窓幅 = 0.001333 [s]
+基本周波数 = 750.000000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 7.705900e-05 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 7.417400e-05 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 1.713001e-06 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 9.720006e-07 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 64）
+DFT  : 7.705900e-05 s
+IDFT : 7.417400e-05 s
+FFT  : 1.713001e-06 s
+IFFT : 9.720006e-07 s
+高速化比 DFT/FFT = 44.98 倍
+高速化比 IDFT/IFFT = 76.31 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 1.060717e-13（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 1.277602e-15
+max |IDFT(Xd) - x|    = 1.297148e-14
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 64 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 64（2^6），	窓幅 = 0.001333 [s]
+基本周波数 = 750.000000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 7.740000e-05 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 7.421300e-05 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 1.472999e-06 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 8.919997e-07 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 64）
+DFT  : 7.740000e-05 s
+IDFT : 7.421300e-05 s
+FFT  : 1.472999e-06 s
+IFFT : 8.919997e-07 s
+高速化比 DFT/FFT = 52.55 倍
+高速化比 IDFT/IFFT = 83.20 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 1.060717e-13（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 1.277602e-15
+max |IDFT(Xd) - x|    = 1.297148e-14
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 64 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 64（2^6），	窓幅 = 0.001333 [s]
+基本周波数 = 750.000000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 1.187900e-04 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 7.517600e-05 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 1.833001e-06 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 9.120013e-07 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 64）
+DFT  : 1.187900e-04 s
+IDFT : 7.517600e-05 s
+FFT  : 1.833001e-06 s
+IFFT : 9.120013e-07 s
+高速化比 DFT/FFT = 64.81 倍
+高速化比 IDFT/IFFT = 82.43 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 1.060717e-13（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 1.277602e-15
+max |IDFT(Xd) - x|    = 1.297148e-14
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 256 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 256（2^8），	窓幅 = 0.005333 [s]
+基本周波数 = 187.500000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 1.064679e-03 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 1.049780e-03 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 4.849000e-06 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 3.156001e-06 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 256）
+DFT  : 1.064679e-03 s
+IDFT : 1.049780e-03 s
+FFT  : 4.849000e-06 s
+IFFT : 3.156001e-06 s
+高速化比 DFT/FFT = 219.57 倍
+高速化比 IDFT/IFFT = 332.63 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 2.082337e-12（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 4.514682e-15
+max |IDFT(Xd) - x|    = 8.147733e-14
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 256 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 256（2^8），	窓幅 = 0.005333 [s]
+基本周波数 = 187.500000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 1.116500e-03 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 1.491475e-03 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 8.606999e-06 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 3.868001e-06 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 256）
+DFT  : 1.116500e-03 s
+IDFT : 1.491475e-03 s
+FFT  : 8.606999e-06 s
+IFFT : 3.868001e-06 s
+高速化比 DFT/FFT = 129.72 倍
+高速化比 IDFT/IFFT = 385.59 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 2.082337e-12（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 4.514682e-15
+max |IDFT(Xd) - x|    = 8.147733e-14
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 256 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 256（2^8），	窓幅 = 0.005333 [s]
+基本周波数 = 187.500000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 1.074588e-03 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 1.236612e-03 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 5.621001e-06 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 3.206000e-06 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 256）
+DFT  : 1.074588e-03 s
+IDFT : 1.236612e-03 s
+FFT  : 5.621001e-06 s
+IFFT : 3.206000e-06 s
+高速化比 DFT/FFT = 191.17 倍
+高速化比 IDFT/IFFT = 385.72 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 2.082337e-12（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 4.514682e-15
+max |IDFT(Xd) - x|    = 8.147733e-14
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 256 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 256（2^8），	窓幅 = 0.005333 [s]
+基本周波数 = 187.500000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 1.040377e-03 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 1.210481e-03 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 5.401000e-06 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 5.321001e-06 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 256）
+DFT  : 1.040377e-03 s
+IDFT : 1.210481e-03 s
+FFT  : 5.401000e-06 s
+IFFT : 5.321001e-06 s
+高速化比 DFT/FFT = 192.63 倍
+高速化比 IDFT/IFFT = 227.49 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 2.082337e-12（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 4.514682e-15
+max |IDFT(Xd) - x|    = 8.147733e-14
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 256 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 256（2^8），	窓幅 = 0.005333 [s]
+基本周波数 = 187.500000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 1.029351e-03 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 1.100729e-03 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 7.463999e-06 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 3.206000e-06 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 256）
+DFT  : 1.029351e-03 s
+IDFT : 1.100729e-03 s
+FFT  : 7.463999e-06 s
+IFFT : 3.206000e-06 s
+高速化比 DFT/FFT = 137.91 倍
+高速化比 IDFT/IFFT = 343.33 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 2.082337e-12（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 4.514682e-15
+max |IDFT(Xd) - x|    = 8.147733e-14
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 1024 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 1024（2^10），	窓幅 = 0.021333 [s]
+基本周波数 = 46.875000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 1.742990e-02 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 2.239860e-02 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 2.590000e-05 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 1.794500e-05 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 1024）
+DFT  : 1.742990e-02 s
+IDFT : 2.239860e-02 s
+FFT  : 2.590000e-05 s
+IFFT : 1.794500e-05 s
+高速化比 DFT/FFT = 672.97 倍
+高速化比 IDFT/IFFT = 1248.18 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 7.882158e-11（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 3.284088e-14
+max |IDFT(Xd) - x|    = 4.706894e-13
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 1024 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 1024（2^10），	窓幅 = 0.021333 [s]
+基本周波数 = 46.875000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 2.185458e-02 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 1.742808e-02 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 1.799500e-05 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 1.361600e-05 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 1024）
+DFT  : 2.185458e-02 s
+IDFT : 1.742808e-02 s
+FFT  : 1.799500e-05 s
+IFFT : 1.361600e-05 s
+高速化比 DFT/FFT = 1214.48 倍
+高速化比 IDFT/IFFT = 1279.97 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 7.882158e-11（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 3.284088e-14
+max |IDFT(Xd) - x|    = 4.706894e-13
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 1024 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 1024（2^10），	窓幅 = 0.021333 [s]
+基本周波数 = 46.875000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 1.714031e-02 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 1.694518e-02 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 1.869600e-05 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 1.666300e-05 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 1024）
+DFT  : 1.714031e-02 s
+IDFT : 1.694518e-02 s
+FFT  : 1.869600e-05 s
+IFFT : 1.666300e-05 s
+高速化比 DFT/FFT = 916.79 倍
+高速化比 IDFT/IFFT = 1016.93 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 7.882158e-11（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 3.284088e-14
+max |IDFT(Xd) - x|    = 4.706894e-13
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 1024 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 1024（2^10），	窓幅 = 0.021333 [s]
+基本周波数 = 46.875000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 1.841320e-02 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 1.703430e-02 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 2.396600e-05 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 1.759400e-05 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 1024）
+DFT  : 1.841320e-02 s
+IDFT : 1.703430e-02 s
+FFT  : 2.396600e-05 s
+IFFT : 1.759400e-05 s
+高速化比 DFT/FFT = 768.31 倍
+高速化比 IDFT/IFFT = 968.19 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 7.882158e-11（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 3.284088e-14
+max |IDFT(Xd) - x|    = 4.706894e-13
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 1024 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 1024（2^10），	窓幅 = 0.021333 [s]
+基本周波数 = 46.875000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 1.768518e-02 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 1.689544e-02 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 1.739300e-05 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 1.368700e-05 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 1024）
+DFT  : 1.768518e-02 s
+IDFT : 1.689544e-02 s
+FFT  : 1.739300e-05 s
+IFFT : 1.368700e-05 s
+高速化比 DFT/FFT = 1016.80 倍
+高速化比 IDFT/IFFT = 1234.42 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 7.882158e-11（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 3.284088e-14
+max |IDFT(Xd) - x|    = 4.706894e-13
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 4096 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 4096（2^12），	窓幅 = 0.085333 [s]
+基本周波数 = 11.718750 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 2.649324e-01 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 2.654404e-01 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 8.304000e-05 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 6.497600e-05 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 4096）
+DFT  : 2.649324e-01 s
+IDFT : 2.654404e-01 s
+FFT  : 8.304000e-05 s
+IFFT : 6.497600e-05 s
+高速化比 DFT/FFT = 3190.42 倍
+高速化比 IDFT/IFFT = 4085.21 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 4.863137e-10（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 8.547676e-14
+max |IDFT(Xd) - x|    = 1.833340e-12
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 4096 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 4096（2^12），	窓幅 = 0.085333 [s]
+基本周波数 = 11.718750 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 2.839326e-01 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 2.850496e-01 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 8.539500e-05 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 6.718000e-05 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 4096）
+DFT  : 2.839326e-01 s
+IDFT : 2.850496e-01 s
+FFT  : 8.539500e-05 s
+IFFT : 6.718000e-05 s
+高速化比 DFT/FFT = 3324.93 倍
+高速化比 IDFT/IFFT = 4243.07 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 4.863137e-10（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 8.547676e-14
+max |IDFT(Xd) - x|    = 1.833340e-12
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 4096 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 4096（2^12），	窓幅 = 0.085333 [s]
+基本周波数 = 11.718750 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 2.706140e-01 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 2.689451e-01 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 6.997600e-05 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 6.443500e-05 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 4096）
+DFT  : 2.706140e-01 s
+IDFT : 2.689451e-01 s
+FFT  : 6.997600e-05 s
+IFFT : 6.443500e-05 s
+高速化比 DFT/FFT = 3867.24 倍
+高速化比 IDFT/IFFT = 4173.90 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 4.863137e-10（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 8.547676e-14
+max |IDFT(Xd) - x|    = 1.833340e-12
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 4096 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 4096（2^12），	窓幅 = 0.085333 [s]
+基本周波数 = 11.718750 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 2.599749e-01 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 2.627748e-01 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 7.028600e-05 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 6.426500e-05 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 4096）
+DFT  : 2.599749e-01 s
+IDFT : 2.627748e-01 s
+FFT  : 7.028600e-05 s
+IFFT : 6.426500e-05 s
+高速化比 DFT/FFT = 3698.82 倍
+高速化比 IDFT/IFFT = 4088.92 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 4.863137e-10（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 8.547676e-14
+max |IDFT(Xd) - x|    = 1.833340e-12
+
+
+$ $BIN/ft $ASSETS/pcm/sin_16_1_48000.wav 4096 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 4096（2^12），	窓幅 = 0.085333 [s]
+基本周波数 = 11.718750 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 2.576327e-01 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 2.750191e-01 [s]
+出力ファイル = idft.txt
+
+■ FFT
+処理時間 = 1.002640e-04 [s]
+出力ファイル = fft.txt
+
+■ IFFT
+処理時間 = 1.025990e-04 [s]
+出力ファイル = ifft.txt
+
+■ 性能比較（N = 4096）
+DFT  : 2.576327e-01 s
+IDFT : 2.750191e-01 s
+FFT  : 1.002640e-04 s
+IFFT : 1.025990e-04 s
+高速化比 DFT/FFT = 2569.54 倍
+高速化比 IDFT/IFFT = 2680.52 倍
+
+■ スペクトル一致検証
+max |Xd[k] - Xf[k]| = 4.863137e-10（理論上は丸め誤差程度）
+
+■ 波形復元検証
+max |IFFT(X) - x|    = 8.547676e-14
+max |IDFT(Xd) - x|    = 1.833340e-12
+
+
+$ $BIN/fft $ASSETS/pcm/sin_16_1_48000.wav 1024 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 1024（2^10），	窓幅 = 0.021333 [s]
+基本周波数 = 46.875000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ FFT 振幅スペクトル（伝達関数の推定）
+出力ファイル = fft.txt
+
+
+$ $BIN/dft $ASSETS/pcm/sin_16_1_48000.wav 1024 0
+■ 入力データ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+■ 分析条件
+開始番号 = 0，	開始時刻 = 0.000000 [s]
+標本数 = 1024，	窓幅 = 0.021333 [s]
+基本周波数 = 46.875000 [Hz]
+
+■ 入力波形
+出力ファイル = wf.txt
+
+■ DFT
+処理時間 = 0.016274 [s]
+出力ファイル = dft.txt
+
+■ IDFT
+処理時間 = 0.016658 [s]
+出力ファイル = idft.txt
+
+
+$ $BIN/ip 2 32 > $ASSETS/filter/impulse.wav
+■ インパルス生成
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	32 [bits]
+データサイズ：	384000 [bytes]
+標本数：	96000
+収録時間：	2.000000 [s]
+
+
+$ $BIN/iir < $ASSETS/filter/impulse.wav > $ASSETS/filter/default_ir_raw.wav
+最大振幅の上界倍率 = 5.000000
+■ IIR 簡易リバーブフィルタ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	32 [bits]
+データサイズ：	384000 [bytes]
+標本数：	96000
+収録時間：	2.000000 [s]
+
+帰還経路 1：遅延 = 1009 標本，係数 = 0.400000
+帰還経路 2：遅延 = 2011 標本，係数 = 0.300000
+帰還経路 3：遅延 = 3001 標本，係数 = 0.200000
+入力ゲイン b0 = 0.500000
+最大遅延量 = 3001 標本（約 0.063 [s]）
+
+
+$ $BIN/iir 0.2 0.15 0.1 < $ASSETS/filter/impulse.wav > $ASSETS/filter/weak_ir_raw.wav
+最大振幅の上界倍率 = 0.909091
+■ IIR 簡易リバーブフィルタ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	32 [bits]
+データサイズ：	384000 [bytes]
+標本数：	96000
+収録時間：	2.000000 [s]
+
+帰還経路 1：遅延 = 1009 標本，係数 = 0.200000
+帰還経路 2：遅延 = 2011 標本，係数 = 0.150000
+帰還経路 3：遅延 = 3001 標本，係数 = 0.100000
+入力ゲイン b0 = 0.500000
+最大遅延量 = 3001 標本（約 0.063 [s]）
+
+
+$ $BIN/iir -0.4 0.3 0.2 < $ASSETS/filter/impulse.wav > $ASSETS/filter/signed_ir_raw.wav
+最大振幅の上界倍率 = 5.000000
+■ IIR 簡易リバーブフィルタ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	32 [bits]
+データサイズ：	384000 [bytes]
+標本数：	96000
+収録時間：	2.000000 [s]
+
+帰還経路 1：遅延 = 1009 標本，係数 = -0.400000
+帰還経路 2：遅延 = 2011 標本，係数 = 0.300000
+帰還経路 3：遅延 = 3001 標本，係数 = 0.200000
+入力ゲイン b0 = 0.500000
+最大遅延量 = 3001 標本（約 0.063 [s]）
+
+
+$ $BIN/iir < $ASSETS/filter/padded_input.wav > $ASSETS/filter/iir.wav
+最大振幅の上界倍率 = 5.000000
+■ IIR 簡易リバーブフィルタ
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	32 [bits]
+データサイズ：	431996 [bytes]
+標本数：	107999
+収録時間：	2.249979 [s]
+
+帰還経路 1：遅延 = 1009 標本，係数 = 0.400000
+帰還経路 2：遅延 = 2011 標本，係数 = 0.300000
+帰還経路 3：遅延 = 3001 標本，係数 = 0.200000
+入力ゲイン b0 = 0.500000
+最大遅延量 = 3001 標本（約 0.063 [s]）
+
+
+$ $BIN/fir $ASSETS/filter/ir.wav < $ASSETS/filter/input.wav > $ASSETS/filter/fir.wav
+■ FIR フィルタ
+インパルス応答ファイル = $ASSETS/filter/ir.wav
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	32 [bits]
+データサイズ：	384000 [bytes]
+標本数：	96000
+収録時間：	2.000000 [s]
+
+インパルス応答の絶対値和 = 4.982668
+
+$ $BIN/synth A4 > $ASSETS/synth/source.wav
+synth: f = 440.000000 Hz
+チャネル数：	1
+標本化周波数：	48000 [Hz]
+量子化深度：	16 [bits]
+データサイズ：	96000 [bytes]
+標本数：	48000
+収録時間：	1.000000 [s]
+
+
+$ /tmp/sound-report-venv/lib64/python3.14/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2 -hide_banner -nostdin -y -i $ASSETS/synth/source.wav -af asetrate=96000,aresample=48000 -ar 48000 -ac 1 -c:a pcm_s16le $ASSETS/synth/speed_2x.wav
+[aist#0:0/pcm_s16le @ 0x37627600] Guessed Channel Layout: mono
+Input #0, wav, from '$ASSETS/synth/source.wav':
+  Duration: 00:00:01.00, bitrate: 768 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Output #0, wav, to '$ASSETS/synth/speed_2x.wav':
+  Metadata:
+    ISFT            : Lavf61.1.100
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+      Metadata:
+        encoder         : Lavc61.3.100 pcm_s16le
+[out#0/wav @ 0x376472c0] video:0KiB audio:47KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.162500%
+size=      47KiB time=00:00:00.50 bitrate= 769.2kbits/s speed= 126x    
+
+$ /tmp/sound-report-venv/lib64/python3.14/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2 -hide_banner -nostdin -y -i $ASSETS/synth/source.wav -af atempo=0.833 -ar 48000 -ac 1 -c:a pcm_s16le $ASSETS/synth/tempo_0833.wav
+[aist#0:0/pcm_s16le @ 0x2894d600] Guessed Channel Layout: mono
+Input #0, wav, from '$ASSETS/synth/source.wav':
+  Duration: 00:00:01.00, bitrate: 768 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Output #0, wav, to '$ASSETS/synth/tempo_0833.wav':
+  Metadata:
+    ISFT            : Lavf61.1.100
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+      Metadata:
+        encoder         : Lavc61.3.100 pcm_s16le
+[out#0/wav @ 0x2896d2c0] video:0KiB audio:112KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.068104%
+size=     112KiB time=00:00:01.19 bitrate= 768.5kbits/s speed= 261x    
+
+$ /tmp/sound-report-venv/lib64/python3.14/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2 -hide_banner -nostdin -y -i $ASSETS/synth/source.wav -af asetrate=50854,aresample=48000,atempo=0.943874313 -ar 48000 -ac 1 -c:a pcm_s16le $ASSETS/synth/pitch_100cent.wav
+[aist#0:0/pcm_s16le @ 0x3f54d600] Guessed Channel Layout: mono
+Input #0, wav, from '$ASSETS/synth/source.wav':
+  Duration: 00:00:01.00, bitrate: 768 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Output #0, wav, to '$ASSETS/synth/pitch_100cent.wav':
+  Metadata:
+    ISFT            : Lavf61.1.100
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+      Metadata:
+        encoder         : Lavc61.3.100 pcm_s16le
+[out#0/wav @ 0x3f56d2c0] video:0KiB audio:93KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.081626%
+size=      93KiB time=00:00:00.99 bitrate= 768.6kbits/s speed= 177x    
+
+$ /tmp/sound-report-venv/lib64/python3.14/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2 -hide_banner -nostdin -y -i $ASSETS/synth/source.wav -af tremolo=f=5:d=0.8 -ar 48000 -ac 1 -c:a pcm_s16le $ASSETS/synth/tremolo.wav
+[aist#0:0/pcm_s16le @ 0x224a0600] Guessed Channel Layout: mono
+Input #0, wav, from '$ASSETS/synth/source.wav':
+  Duration: 00:00:01.00, bitrate: 768 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Output #0, wav, to '$ASSETS/synth/tremolo.wav':
+  Metadata:
+    ISFT            : Lavf61.1.100
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+      Metadata:
+        encoder         : Lavc61.3.100 pcm_s16le
+[out#0/wav @ 0x224c02c0] video:0KiB audio:94KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.081250%
+size=      94KiB time=00:00:01.00 bitrate= 768.6kbits/s speed= 279x    
+
+$ /tmp/sound-report-venv/lib64/python3.14/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2 -hide_banner -nostdin -y -i $ASSETS/synth/source.wav -af vibrato=f=5:d=0.5 -ar 48000 -ac 1 -c:a pcm_s16le $ASSETS/synth/vibrato.wav
+[aist#0:0/pcm_s16le @ 0x3e334600] Guessed Channel Layout: mono
+Input #0, wav, from '$ASSETS/synth/source.wav':
+  Duration: 00:00:01.00, bitrate: 768 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Output #0, wav, to '$ASSETS/synth/vibrato.wav':
+  Metadata:
+    ISFT            : Lavf61.1.100
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+      Metadata:
+        encoder         : Lavc61.3.100 pcm_s16le
+[out#0/wav @ 0x3e3542c0] video:0KiB audio:94KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.081250%
+size=      94KiB time=00:00:01.00 bitrate= 768.6kbits/s speed= 279x    
+
+$ /tmp/sound-report-venv/lib64/python3.14/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2 -hide_banner -nostdin -y -i $ASSETS/synth/source.wav -af lowpass=f=1000:p=2 -ar 48000 -ac 1 -c:a pcm_s16le $ASSETS/synth/lowpass.wav
+[aist#0:0/pcm_s16le @ 0x40da1600] Guessed Channel Layout: mono
+Input #0, wav, from '$ASSETS/synth/source.wav':
+  Duration: 00:00:01.00, bitrate: 768 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Output #0, wav, to '$ASSETS/synth/lowpass.wav':
+  Metadata:
+    ISFT            : Lavf61.1.100
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+      Metadata:
+        encoder         : Lavc61.3.100 pcm_s16le
+[out#0/wav @ 0x40dc12c0] video:0KiB audio:94KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.081250%
+size=      94KiB time=00:00:01.00 bitrate= 768.6kbits/s speed= 284x    
+
+$ /tmp/sound-report-venv/lib64/python3.14/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2 -hide_banner -nostdin -y -i $ASSETS/synth/source.wav -af 'aecho=0.6:0.5:100|200:0.3|0.15' -ar 48000 -ac 1 -c:a pcm_s16le $ASSETS/synth/echo.wav
+[aist#0:0/pcm_s16le @ 0x187b5600] Guessed Channel Layout: mono
+Input #0, wav, from '$ASSETS/synth/source.wav':
+  Duration: 00:00:01.00, bitrate: 768 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Output #0, wav, to '$ASSETS/synth/echo.wav':
+  Metadata:
+    ISFT            : Lavf61.1.100
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+      Metadata:
+        encoder         : Lavc61.3.100 pcm_s16le
+[out#0/wav @ 0x187d52c0] video:0KiB audio:112KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.067708%
+size=     113KiB time=00:00:01.20 bitrate= 768.5kbits/s speed= 326x    

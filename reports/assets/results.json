@@ -1,0 +1,484 @@
+{
+  "environment": {
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.14.5",
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.2",
+    "utc": "2026-09-14T05:18:42.287957+00:00",
+    "compiler": "cc (GCC) 16.1.1 20260515 (Red Hat 16.1.1-2)",
+    "ffmpeg": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers"
+  },
+  "pcm": [
+    {
+      "file": "sin_8_1_48000.wav",
+      "bits": 8,
+      "channels": 1,
+      "fs": 48000,
+      "byte_rate": 48000,
+      "block_align": 1,
+      "data_bytes": 48000,
+      "file_bytes": 48044
+    },
+    {
+      "file": "sin_16_1_48000.wav",
+      "bits": 16,
+      "channels": 1,
+      "fs": 48000,
+      "byte_rate": 96000,
+      "block_align": 2,
+      "data_bytes": 96000,
+      "file_bytes": 96044
+    },
+    {
+      "file": "sin_24_1_48000.wav",
+      "bits": 24,
+      "channels": 1,
+      "fs": 48000,
+      "byte_rate": 144000,
+      "block_align": 3,
+      "data_bytes": 144000,
+      "file_bytes": 144044
+    },
+    {
+      "file": "sin_32_1_48000.wav",
+      "bits": 32,
+      "channels": 1,
+      "fs": 48000,
+      "byte_rate": 192000,
+      "block_align": 4,
+      "data_bytes": 192000,
+      "file_bytes": 192044
+    },
+    {
+      "file": "sin_16_2_48000.wav",
+      "bits": 16,
+      "channels": 2,
+      "fs": 48000,
+      "byte_rate": 192000,
+      "block_align": 4,
+      "data_bytes": 192000,
+      "file_bytes": 192044
+    },
+    {
+      "file": "sin_16_1_8000.wav",
+      "bits": 16,
+      "channels": 1,
+      "fs": 8000,
+      "byte_rate": 16000,
+      "block_align": 2,
+      "data_bytes": 16000,
+      "file_bytes": 16044
+    },
+    {
+      "file": "sin_16_1_44100.wav",
+      "bits": 16,
+      "channels": 1,
+      "fs": 44100,
+      "byte_rate": 88200,
+      "block_align": 2,
+      "data_bytes": 88200,
+      "file_bytes": 88244
+    }
+  ],
+  "rates": [
+    {
+      "file": "rate_0.25.wav",
+      "sample_rate_hz": 12000,
+      "frames": 48000,
+      "duration_s": 4.0,
+      "peak_frequency_hz": 110.0,
+      "rms": 0.7071060387772964,
+      "peak": 1.0,
+      "factor": 0.25
+    },
+    {
+      "file": "rate_0.5.wav",
+      "sample_rate_hz": 24000,
+      "frames": 48000,
+      "duration_s": 2.0,
+      "peak_frequency_hz": 220.0,
+      "rms": 0.7071060387772964,
+      "peak": 1.0,
+      "factor": 0.5
+    },
+    {
+      "file": "rate_1.wav",
+      "sample_rate_hz": 48000,
+      "frames": 48000,
+      "duration_s": 1.0,
+      "peak_frequency_hz": 440.0,
+      "rms": 0.7071060387772964,
+      "peak": 1.0,
+      "factor": 1
+    },
+    {
+      "file": "rate_2.wav",
+      "sample_rate_hz": 96000,
+      "frames": 48000,
+      "duration_s": 0.5,
+      "peak_frequency_hz": 880.0,
+      "rms": 0.7071060387772964,
+      "peak": 1.0,
+      "factor": 2
+    },
+    {
+      "file": "rate_4.wav",
+      "sample_rate_hz": 192000,
+      "frames": 48000,
+      "duration_s": 0.25,
+      "peak_frequency_hz": 1760.0,
+      "rms": 0.7071060387772964,
+      "peak": 1.0,
+      "factor": 4
+    }
+  ],
+  "generation": {
+    "cadence_frames": 144000,
+    "sequence_frames": 144000,
+    "mix_frames": 48000,
+    "mix_peak": 0.3131103515625,
+    "mix_max_error": 2.0345052083342585e-05
+  },
+  "fourier": {
+    "timings": [
+      {
+        "N": 64,
+        "runs": [
+          {
+            "DFT": 0.000217316,
+            "IDFT": 7.6177e-05,
+            "FFT": 1.854001e-06,
+            "IFFT": 9.51999e-07
+          },
+          {
+            "DFT": 8.3712e-05,
+            "IDFT": 7.4755e-05,
+            "FFT": 1.974e-06,
+            "IFFT": 9.319992e-07
+          },
+          {
+            "DFT": 7.7059e-05,
+            "IDFT": 7.4174e-05,
+            "FFT": 1.713001e-06,
+            "IFFT": 9.720006e-07
+          },
+          {
+            "DFT": 7.74e-05,
+            "IDFT": 7.4213e-05,
+            "FFT": 1.472999e-06,
+            "IFFT": 8.919997e-07
+          },
+          {
+            "DFT": 0.00011879,
+            "IDFT": 7.5176e-05,
+            "FFT": 1.833001e-06,
+            "IFFT": 9.120013e-07
+          }
+        ],
+        "median_s": {
+          "DFT": 8.3712e-05,
+          "IDFT": 7.4755e-05,
+          "FFT": 1.833001e-06,
+          "IFFT": 9.319992e-07
+        },
+        "min_s": {
+          "DFT": 7.7059e-05,
+          "IDFT": 7.4174e-05,
+          "FFT": 1.472999e-06,
+          "IFFT": 8.919997e-07
+        },
+        "max_s": {
+          "DFT": 0.000217316,
+          "IDFT": 7.6177e-05,
+          "FFT": 1.974e-06,
+          "IFFT": 9.720006e-07
+        }
+      },
+      {
+        "N": 256,
+        "runs": [
+          {
+            "DFT": 0.001064679,
+            "IDFT": 0.00104978,
+            "FFT": 4.849e-06,
+            "IFFT": 3.156001e-06
+          },
+          {
+            "DFT": 0.0011165,
+            "IDFT": 0.001491475,
+            "FFT": 8.606999e-06,
+            "IFFT": 3.868001e-06
+          },
+          {
+            "DFT": 0.001074588,
+            "IDFT": 0.001236612,
+            "FFT": 5.621001e-06,
+            "IFFT": 3.206e-06
+          },
+          {
+            "DFT": 0.001040377,
+            "IDFT": 0.001210481,
+            "FFT": 5.401e-06,
+            "IFFT": 5.321001e-06
+          },
+          {
+            "DFT": 0.001029351,
+            "IDFT": 0.001100729,
+            "FFT": 7.463999e-06,
+            "IFFT": 3.206e-06
+          }
+        ],
+        "median_s": {
+          "DFT": 0.001064679,
+          "IDFT": 0.001210481,
+          "FFT": 5.621001e-06,
+          "IFFT": 3.206e-06
+        },
+        "min_s": {
+          "DFT": 0.001029351,
+          "IDFT": 0.00104978,
+          "FFT": 4.849e-06,
+          "IFFT": 3.156001e-06
+        },
+        "max_s": {
+          "DFT": 0.0011165,
+          "IDFT": 0.001491475,
+          "FFT": 8.606999e-06,
+          "IFFT": 5.321001e-06
+        }
+      },
+      {
+        "N": 1024,
+        "runs": [
+          {
+            "DFT": 0.0174299,
+            "IDFT": 0.0223986,
+            "FFT": 2.59e-05,
+            "IFFT": 1.7945e-05
+          },
+          {
+            "DFT": 0.02185458,
+            "IDFT": 0.01742808,
+            "FFT": 1.7995e-05,
+            "IFFT": 1.3616e-05
+          },
+          {
+            "DFT": 0.01714031,
+            "IDFT": 0.01694518,
+            "FFT": 1.8696e-05,
+            "IFFT": 1.6663e-05
+          },
+          {
+            "DFT": 0.0184132,
+            "IDFT": 0.0170343,
+            "FFT": 2.3966e-05,
+            "IFFT": 1.7594e-05
+          },
+          {
+            "DFT": 0.01768518,
+            "IDFT": 0.01689544,
+            "FFT": 1.7393e-05,
+            "IFFT": 1.3687e-05
+          }
+        ],
+        "median_s": {
+          "DFT": 0.01768518,
+          "IDFT": 0.0170343,
+          "FFT": 1.8696e-05,
+          "IFFT": 1.6663e-05
+        },
+        "min_s": {
+          "DFT": 0.01714031,
+          "IDFT": 0.01689544,
+          "FFT": 1.7393e-05,
+          "IFFT": 1.3616e-05
+        },
+        "max_s": {
+          "DFT": 0.02185458,
+          "IDFT": 0.0223986,
+          "FFT": 2.59e-05,
+          "IFFT": 1.7945e-05
+        }
+      },
+      {
+        "N": 4096,
+        "runs": [
+          {
+            "DFT": 0.2649324,
+            "IDFT": 0.2654404,
+            "FFT": 8.304e-05,
+            "IFFT": 6.4976e-05
+          },
+          {
+            "DFT": 0.2839326,
+            "IDFT": 0.2850496,
+            "FFT": 8.5395e-05,
+            "IFFT": 6.718e-05
+          },
+          {
+            "DFT": 0.270614,
+            "IDFT": 0.2689451,
+            "FFT": 6.9976e-05,
+            "IFFT": 6.4435e-05
+          },
+          {
+            "DFT": 0.2599749,
+            "IDFT": 0.2627748,
+            "FFT": 7.0286e-05,
+            "IFFT": 6.4265e-05
+          },
+          {
+            "DFT": 0.2576327,
+            "IDFT": 0.2750191,
+            "FFT": 0.000100264,
+            "IFFT": 0.000102599
+          }
+        ],
+        "median_s": {
+          "DFT": 0.2649324,
+          "IDFT": 0.2689451,
+          "FFT": 8.304e-05,
+          "IFFT": 6.4976e-05
+        },
+        "min_s": {
+          "DFT": 0.2576327,
+          "IDFT": 0.2627748,
+          "FFT": 6.9976e-05,
+          "IFFT": 6.4265e-05
+        },
+        "max_s": {
+          "DFT": 0.2839326,
+          "IDFT": 0.2850496,
+          "FFT": 0.000100264,
+          "IFFT": 0.000102599
+        }
+      }
+    ],
+    "fft_numpy_max_error": 4.888534022029489e-12,
+    "dft_fft_magnitude_max_error": 5.1386450650170445e-11,
+    "idft_max_error": 3.764766276503906e-13,
+    "ifft_max_error": 3.186340080674199e-14
+  },
+  "filter": {
+    "impulse_amplitude": 0.8999999999068677,
+    "ir_frames": 96000,
+    "fir_frames": 107999,
+    "iir_frames": 107999,
+    "fir_iir_max_error": 8.437782526016235e-07,
+    "fir_iir_rms_error": 1.201822131818972e-07,
+    "ir_sum": 4.98266851270599,
+    "theoretical_dc_gain": 5.0,
+    "iir_peak": 0.01780936634168029,
+    "fir_peak": 0.01780936634168029,
+    "dc_gains": {
+      "default": 4.98266851270599,
+      "weak": 0.9090905508139367,
+      "signed": 0.5555499547425607
+    }
+  },
+  "synth": {
+    "source": {
+      "file": "source.wav",
+      "sample_rate_hz": 48000,
+      "frames": 48000,
+      "duration_s": 1.0,
+      "peak_frequency_hz": 440.0,
+      "rms": 0.13674692697968735,
+      "peak": 0.35589599609375
+    },
+    "speed_2x": {
+      "file": "speed_2x.wav",
+      "sample_rate_hz": 48000,
+      "frames": 24000,
+      "duration_s": 0.5,
+      "peak_frequency_hz": 880.0,
+      "rms": 0.1362110524799949,
+      "peak": 0.351226806640625
+    },
+    "tempo_0833": {
+      "file": "tempo_0833.wav",
+      "sample_rate_hz": 48000,
+      "frames": 57265,
+      "duration_s": 1.1930208333333334,
+      "peak_frequency_hz": 440.0593730900201,
+      "rms": 0.13668430954087488,
+      "peak": 0.3533935546875
+    },
+    "pitch_100cent": {
+      "file": "pitch_100cent.wav",
+      "sample_rate_hz": 48000,
+      "frames": 47779,
+      "duration_s": 0.9953958333333334,
+      "peak_frequency_hz": 466.1462148642709,
+      "rms": 0.13687189396766108,
+      "peak": 0.3515625
+    },
+    "tremolo": {
+      "file": "tremolo.wav",
+      "sample_rate_hz": 48000,
+      "frames": 48000,
+      "duration_s": 1.0,
+      "peak_frequency_hz": 440.0,
+      "rms": 0.09291186703350669,
+      "peak": 0.34857177734375
+    },
+    "vibrato": {
+      "file": "vibrato.wav",
+      "sample_rate_hz": 48000,
+      "frames": 48000,
+      "duration_s": 1.0,
+      "peak_frequency_hz": 450.0,
+      "rms": 0.1357466645506604,
+      "peak": 0.340301513671875
+    },
+    "lowpass": {
+      "file": "lowpass.wav",
+      "sample_rate_hz": 48000,
+      "frames": 48000,
+      "duration_s": 1.0,
+      "peak_frequency_hz": 440.0,
+      "rms": 0.1231849167952532,
+      "peak": 0.328857421875
+    },
+    "echo": {
+      "file": "echo.wav",
+      "sample_rate_hz": 48000,
+      "frames": 57600,
+      "duration_s": 1.2,
+      "peak_frequency_hz": 440.0,
+      "rms": 0.06180237744716345,
+      "peak": 0.1085205078125
+    }
+  },
+  "synth_details": {
+    "lowpass_attenuation_db": {
+      "440": -0.15807028320282882,
+      "1320": -6.074944408788204,
+      "2200": -13.973877236582341
+    },
+    "echo_tail_rms": 0.0009785595977253125
+  },
+  "source_sha256": {
+    "pcm/dft.c": "6b605cbff14cab3af0088b349195e5b18be8ccdc47d3a2b5cd232a0ff56ad10c",
+    "pcm/fft.c": "eb58e2c911c87e7e0b6685ec6bdd476b726f3b48a5d68e541d2f6b2e6ec81c7f",
+    "pcm/fir.c": "fc30ad6e787511456c46ae35b5828eee99f49b0303f831bc6602d75bc5518ecf",
+    "pcm/ft.c": "3b4c715b3a8e565af54741282edc8ab6f777b064b4b2f5f222a0c4793cbaf678",
+    "pcm/iir.c": "f71ff1fff3d3cc81134099a0d505c0ea69cc90383e77427ab8adc76e6ce4e50f",
+    "pcm/ip.c": "05b0ba875fda9fc4ada133ab7441488a7c6abad4bf427acf5d9c1bb1d0598a44",
+    "pcm/mix.c": "dd67fca75f8a2662a451ea93fd7b143a8e8d69da34ec621e339b52870eed1afc",
+    "pcm/pcm.c": "4e438cea5fc33cec75cb185c48c0fcbe8dcbe71020c0a73219fb6f311b9fd167",
+    "pcm/rate.c": "2b9b72ff910092116d2367ccd93f7404403a5d2ba74d21f77f72e4618d363cfa",
+    "pcm/seq.c": "2552cd4e46f8a5b012cd55f37d9407c9ad288ac805238df9aa5b2951b2591030",
+    "pcm/sin.c": "eea7a8d7c5f6dfdfc1d310431464a34887f575be00d983fba7f5603b30732752",
+    "pcm/sin2.c": "71673c4bd042b132f3c257fbed42b42eefa0ef1b35cb994b497da9651fc944eb",
+    "pcm/synth.c": "a85b694ea19b16c4a5231f66008747b554f49925179eef5e68c85e19df8f9bd8",
+    "pcm/thru.c": "7875829fba4e2a1944cf2922ae81388b56a9d70e17d080c69aedfc0e04cda008",
+    "pcm/wave.c": "e6ded1821295986ff287fba6601d6a47c5deb38f7e7c455d91690dd3a9eaa38a",
+    "pcm/args.h": "eacdc08a8d0d3683e92c3181c3ca7a69cadbd42d13789eece5ea1ea13f90c65c",
+    "pcm/cx.h": "86a728f660f14cd23496db6ed3f3458c2d177bfe3fffcf7a2514788f3417503a",
+    "pcm/pcm.h": "c3f529ba089e6558807ec1120f804a13b4d5996b02104771d96b84977012d27f",
+    "pcm/Makefile": "f48bedb76763a51d850865bdfc7fdf13ea42e4fbd516e98d18b4c4f6cad20854",
+    "reproduce.py": "3ca9c82ef95f612ebd9ae77eb291dcc886873c9e97ae9ad93b6bad7f4f090df6",
+    "analyze_audio.py": "2a5ff2492c6d140f57e5d05d75056ca3fde4403ce8c4bd9d2bac7969da3f516f"
+  }
+}

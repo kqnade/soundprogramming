@@ -1,0 +1,18 @@
+make: Entering directory '/home/kqnade/repos/github.com/kqnade/soundprogramming/reports/pcm'
+mkdir -p build
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra -fPIC -shared pcm.c -lm -o build/libpcm.so
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra thru.c -Lbuild -lpcm -lm -Wl,-rpath,'$ORIGIN' -o build/thru
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra rate.c -Lbuild -lpcm -lm -Wl,-rpath,'$ORIGIN' -o build/rate
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra sin.c -Lbuild -lpcm -lm -Wl,-rpath,'$ORIGIN' -o build/sin
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra sin2.c -Lbuild -lpcm -lm -Wl,-rpath,'$ORIGIN' -o build/sin2
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra wave.c -Lbuild -lpcm -lm -Wl,-rpath,'$ORIGIN' -o build/wave
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra synth.c -Lbuild -lpcm -lm -Wl,-rpath,'$ORIGIN' -o build/synth
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra seq.c -Lbuild -lpcm -lm -Wl,-rpath,'$ORIGIN' -o build/seq
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra mix.c -Lbuild -lpcm -lm -Wl,-rpath,'$ORIGIN' -o build/mix
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra dft.c -Lbuild -lpcm -lm -Wl,-rpath,'$ORIGIN' -o build/dft
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra ft.c -Lbuild -lpcm -lm -Wl,-rpath,'$ORIGIN' -o build/ft
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra iir.c -Lbuild -lpcm -lm -Wl,-rpath,'$ORIGIN' -o build/iir
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra ip.c -Lbuild -lpcm -lm -Wl,-rpath,'$ORIGIN' -o build/ip
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra fft.c -Lbuild -lpcm -lm -Wl,-rpath,'$ORIGIN' -o build/fft
+cc -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -I. -O2 -std=c99 -Wall -Wextra fir.c -Lbuild -lpcm -lm -Wl,-rpath,'$ORIGIN' -o build/fir
+make: Leaving directory '/home/kqnade/repos/github.com/kqnade/soundprogramming/reports/pcm'

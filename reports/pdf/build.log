@@ -1,0 +1,31 @@
+report_analog_filter.md: exit=0
+[WARNING] [makePDF] LaTeX Warning: You have requested release `2026/06/01' of
+  LaTeX, but only release `2025-11-01' is available.
+
+report_dft.md: exit=0
+[WARNING] [makePDF] LaTeX Warning: You have requested release `2026/06/01' of
+  LaTeX, but only release `2025-11-01' is available.
+
+report_exercises.md: exit=0
+[WARNING] [makePDF] LaTeX Warning: You have requested release `2026/06/01' of
+  LaTeX, but only release `2025-11-01' is available.
+
+report_fft.md: exit=0
+[WARNING] [makePDF] LaTeX Warning: You have requested release `2026/06/01' of
+  LaTeX, but only release `2025-11-01' is available.
+
+report_filter.md: exit=0
+[WARNING] [makePDF] LaTeX Warning: You have requested release `2026/06/01' of
+  LaTeX, but only release `2025-11-01' is available.
+
+report_generation.md: exit=0
+[WARNING] [makePDF] LaTeX Warning: You have requested release `2026/06/01' of
+  LaTeX, but only release `2025-11-01' is available.
+
+report_pcm.md: exit=0
+[WARNING] [makePDF] LaTeX Warning: You have requested release `2026/06/01' of
+  LaTeX, but only release `2025-11-01' is available.
+
+report_synth.md: exit=0
+[WARNING] [makePDF] LaTeX Warning: You have requested release `2026/06/01' of
+  LaTeX, but only release `2025-11-01' is available.

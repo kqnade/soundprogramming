@@ -1,0 +1,50 @@
+{
+  "report_analog_filter.pdf": {
+    "pages": 3,
+    "images": 0,
+    "markdown_sha256": "cd95bec3e864c7705a596f894be8d902e26bb4b436a83ab9960f13915a19c634",
+    "pdf_sha256": "4e13c12334501aa02dda25331b526bca7faa54eb66fbbbd98db0afb67207084a"
+  },
+  "report_dft.pdf": {
+    "pages": 4,
+    "images": 1,
+    "markdown_sha256": "b4f96d308c80c699343d2729805c6f492079a1c6e3b5712a9e35ea845dcc1f4c",
+    "pdf_sha256": "9c43dfbbfd208498e1906ce8d60f15e191917eccf23cb932cb8262d4c5dfd691"
+  },
+  "report_exercises.pdf": {
+    "pages": 2,
+    "images": 0,
+    "markdown_sha256": "ca17c988bc635c8b7232932e236cfff2d3527de263bec1a1da8d12ce9381b4fe",
+    "pdf_sha256": "18ee21be549542752575131f9888abb5baa4a6bc2872766e13cdad764ac148b5"
+  },
+  "report_fft.pdf": {
+    "pages": 9,
+    "images": 2,
+    "markdown_sha256": "d342c5d00b222460707dad4d965226621e3b8e787424aca8ec8cd44dfbdda344",
+    "pdf_sha256": "49be5dec4e21172c1569cfb651a0179ae2af8527c5105929762dfd88631ebb69"
+  },
+  "report_filter.pdf": {
+    "pages": 7,
+    "images": 2,
+    "markdown_sha256": "999cac64a1bd5acc37f48aa69e21d4464f7c24107c08c9ef8ca752b0e9cb06ef",
+    "pdf_sha256": "368cde76e199b3834845aa168e2c30754534fb08d58af10f91efdff4f257b529"
+  },
+  "report_generation.pdf": {
+    "pages": 6,
+    "images": 2,
+    "markdown_sha256": "d740b521372ca5bd232a4a3820bd098bb362d412c19f6ed0124889fa3ad36134",
+    "pdf_sha256": "496d6ca53bb6edf3593bd6e5c6e5d4a13dc4322622a9a9b9a216149233883d51"
+  },
+  "report_pcm.pdf": {
+    "pages": 5,
+    "images": 1,
+    "markdown_sha256": "71eafbc714f9a7215043d695a4d14fd152d9d258542ced7a1de806ff7f21fa09",
+    "pdf_sha256": "4f189c5df6962bfdde40b263fe4af9ba821f2be59d0208fc23babb01051c5502"
+  },
+  "report_synth.pdf": {
+    "pages": 5,
+    "images": 3,
+    "markdown_sha256": "480b9cd59bda5b5809968eda1775c141b6b73d45852d797307d0ada9dc10b21b",
+    "pdf_sha256": "2907d1fe68ac04bbf1deb47701254f5caf915a6ebbdee071622087a2402ade45"
+  }
+}
